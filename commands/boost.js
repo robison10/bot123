@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder, PermissionFlagsBits, AttachmentBuilder } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder, PermissionFlagsBits } = require('discord.js');
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -10,7 +10,7 @@ module.exports = {
     const embed = new EmbedBuilder()
       .setTitle('Benefícios Booster - Stumble Burst <:boost:1490498699288121404>')
       .setColor(0xff73fa)
-      .setThumbnail('attachment://logo.png')
+      .setThumbnail('https://i.imgur.com/SUAIMAGEM.png')
       .setDescription(
         '**Important Notice:**\n' +
         'benefits are only available while your boost is activicty\n\n' +
@@ -21,9 +21,6 @@ module.exports = {
       );
 
     await interaction.reply({ content: '✅ Enviado!', ephemeral: true });
-    await interaction.channel.send({
-      embeds: [embed],
-      files: [{ attachment: './logo.png', name: 'logo.png' }],
-    });
+    await interaction.channel.send({ embeds: [embed] });
   },
 };
